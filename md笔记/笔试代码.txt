@@ -1,0 +1,332 @@
+
+    private static HashSet<Integer> hashSet = new HashSet<>();
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int q = scanner.nextInt();
+        if (n < 1 || q < 1) {
+            return;
+        }
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            list.add(scanner.nextInt());
+        }
+        toSelectCore(list);
+        for (int i = 0; i < q; i++) {
+            int s = scanner.nextInt();
+            if (hashSet.contains(s)) {
+                System.out.println("YES");
+            } else {
+                System.out.println("NO");
+            }
+        }
+    }
+
+    private static void toSelectCore(List<Integer> list) {
+        int sum = getSum(list);
+        hashSet.add(sum);
+        if (list.size() <= 1) {
+            return;
+        }
+        int avg = sum / list.size();
+        List<Integer> list1 = new ArrayList<>();
+        List<Integer> list2 = new ArrayList<>();
+        for (Integer integer : list) {
+            if (integer > avg) {
+                list1.add(integer);
+            } else {
+                list2.add(integer);
+            }
+        }
+        toSelectCore(list1);
+        toSelectCore(list2);
+    }
+
+    private static int getSum(List<Integer> list) {
+        int sum = 0;
+        for (Integer integer : list) {
+            sum += integer;
+        }
+        return sum;
+    }
+
+
+
+
+    public static void main6(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        if (n < 1) {
+            return;
+        }
+        int k = scanner.nextInt();
+        int[] nums = new int[n];
+        for (int i = 0; i < n; i++) {
+            nums[i] = scanner.nextInt();
+        }
+        int maxLength = 0;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (Main.isPrefect(nums, i, j, k) && (j - i + 1) > maxLength) {
+                    maxLength = j - i + 1;
+                }
+            }
+        }
+        System.out.println(maxLength);
+    }
+
+    private static boolean isPrefect(int[] nums, int left, int right, int k) {
+        int bigCount = 0, smallCount = 0;
+        for (int i = left; i <= right; i++) {
+            if (nums[i] > k) {
+                bigCount++;
+            } else {
+                smallCount++;
+            }
+        }
+        return bigCount > smallCount;
+    }
+
+
+    public static void main5(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        if (n < 1) {
+            return;
+        }
+        int result = 0;
+        Map<Integer, Integer> hashMap = new HashMap<>();
+        for (int i = 0; i < n; i++) {
+            int a = scanner.nextInt();
+            if (hashMap.containsKey(a)) {
+                Integer old = hashMap.get(a);
+                hashMap.replace(a, old + 1);
+                Integer now = old + 1;
+                if (result < now) {
+                    result = now;
+                }
+            } else {
+                hashMap.put(a, 1);
+                if (result < 1) {
+                    result = 1;
+                }
+            }
+        }
+        System.out.println(result);
+    }
+
+
+    public static void main4(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int m = scanner.nextInt();
+        if (n < 1 || m < 1) {
+            return;
+        }
+        Map<String, Integer> hashMapW = new HashMap<>();
+        Map<String, Integer> hashMapC = new HashMap<>();
+        for (int i = 0; i < n; i++) {
+            String s = scanner.next();
+            int w = scanner.nextInt();
+            int c = scanner.nextInt();
+            hashMapW.put(s, w);
+            hashMapC.put(s, c);
+        }
+        int result = 0;
+        for (int i = 0; i < m; i++) {
+            String t = scanner.next();
+            int d = scanner.nextInt();
+            if (hashMapC.containsKey(t)) {
+                Integer c = hashMapC.get(t);
+                if (c >= d) {
+                    result += d * hashMapW.get(t);
+                    hashMapC.replace(t, c - d);
+                } else {
+                    System.out.println("-" + (i + 1));
+                    return;
+                }
+            } else {
+                System.out.println("-" + (i + 1));
+                return;
+            }
+        }
+        System.out.println(result);
+    }
+
+
+
+    public static void main2(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+        if (t < 1) {
+            return;
+        }
+        int[][] nums = new int[t][];
+        for (int i = 0; i < t; i++) {
+            int n = scanner.nextInt();
+            nums[i] = new int[n];
+            for (int j = 0; j < n; j++) {
+                nums[i][j] = scanner.nextInt();
+            }
+        }
+        for (int i = 0; i < t; i++) {
+            int n = nums[i].length;
+            boolean flag = false;
+            for (int j = 0; j < n - 1; j++) {
+                if (nums[i][j] > nums[i][j + 1]) {
+                    System.out.println("-1");
+                    flag = true;
+                    break;
+                }
+            }
+            if (!flag) {
+                System.out.println("0");
+            }
+        }
+    }
+
+    public static void main1(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.next();
+        int n = scanner.nextInt();
+        if (n < 1) {
+            System.out.println(str);
+        }
+        int[] opt = new int[n * 3];
+        for (int i = 0; i < n * 3; i++) {
+            opt[i] = scanner.nextInt();
+        }
+        for (int i = 0; i < n; i++) {
+
+        }
+    }
+
+
+    public static void main3(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int c = scanner.nextInt();
+        if (n < 1 || c < 1) {
+            return;
+        }
+        int max = 26 * c;
+        for (int i = 0; i < n; i++) {
+            int num = scanner.nextInt();
+            if (num > 0 && num <= max) {
+                int q = num / c;
+                int r = num % c;
+                if (r == 0) {
+                    System.out.printf("%c5", q + 64);
+                } else {
+                    System.out.printf("%c%d", q + 65, r);
+                }
+                System.out.println();
+            }
+        }
+    }
+
+
+
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        int n = scanner.nextInt();
+//        if (n < 1) {
+//            return;
+//        }
+//        HashMap<String, String> hashMap = new HashMap<>();
+//        StringBuilder builder = new StringBuilder();
+//        for (int i = 0; i < n; i++) {
+//            String strOpt = scanner.next();
+//            if (strOpt.equals("Add")) {
+//                String nameStr = scanner.next();
+//                String x = scanner.next();
+//                String y = scanner.next();
+//                if (!hashMap.containsKey(nameStr)) {
+//                    hashMap.put(nameStr, x + " " + y);
+//                }
+//            }
+//            if (strOpt.equals("Change")) {
+//                String nameStr = scanner.next();
+//                String x = scanner.next();
+//                String y = scanner.next();
+//                if (hashMap.containsKey(nameStr)) {
+//                    hashMap.replace(nameStr, x + " " + y);
+//                }
+//            }
+//            if (strOpt.equals("Delete")) {
+//                String nameStr = scanner.next();
+//                hashMap.remove(nameStr);
+//            }
+//            if (strOpt.equals("Query")) {
+//                String nameStr = scanner.next();
+//                if (!hashMap.containsKey(nameStr)) {
+//                    builder.append("no\n");
+//                } else {
+//                    String locatStr = hashMap.get(nameStr);
+//                    builder.append("yes\n");
+//                    builder.append(locatStr + "\n");
+//                }
+//            }
+//        }
+//        System.out.println(builder.toString());
+//    }
+//
+//
+//    public static void main2(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        int n = scanner.nextInt();
+//        int m = scanner.nextInt();
+//        int k = scanner.nextInt();
+//        int x = scanner.nextInt();
+//        int y = scanner.nextInt();
+//        if (n < 1 || m < 1 || k < 0 || x < 1 || y < 1) {
+//            return;
+//        }
+//        int[][] nums = new int[n + 1][m + 1];
+//        for (int i = 1; i <= n; i++) {
+//            for (int j = 1; j <= m; j++) {
+//                nums[i][j] = scanner.nextInt();
+//            }
+//        }
+//        if (nums[x][y] < 0) {
+//            return;
+//        }
+//        if (k < 2) {
+//            System.out.println(nums[x][y]);
+//        }
+//        System.out.println(6);
+//    }
+//
+//
+//    public static void main1(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        int n = scanner.nextInt();
+//        if (n <= 0) {
+//            return;
+//        }
+//        int[] nums = new int[n];
+//        for (int i = 0; i < n; i++) {
+//            nums[i] = scanner.nextInt();
+//        }
+//        boolean[] isRemove = new boolean[n];
+//        for (int i = 0; i < n - 1; i++) {
+//            for (int j = i + 1; j < n; j++) {
+//                if (nums[i] < nums[j]) {
+//                    isRemove[i] = true;
+//                    break;
+//                }
+//            }
+//        }
+//        ArrayList<Integer> resultList = new ArrayList<>();
+//        for (int i = 0; i < n; i++) {
+//            if (!isRemove[i]) {
+//                resultList.add(nums[i]);
+//            }
+//        }
+//        System.out.println(resultList.size());
+//        for (Integer integer : resultList) {
+//            System.out.print(integer);
+//        }
+//        System.out.println();
+//    }
