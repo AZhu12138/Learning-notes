@@ -242,23 +242,10 @@ public void helloTest() {
        private Map<String, String> card;
        private Set<String> games;
        private String wife;
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
        private Properties info;
    }
    ```
-
+   
 3. beans.xml
 
    ```xml
