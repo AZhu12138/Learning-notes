@@ -173,11 +173,15 @@ Redis（Remote Dictionary Server )，即**远程字典服务**，
 
    不复制也可以，但是遵循Linux文件结构规范：配置文件应该放到`/etc/`下。
 
+   ![](https://azhu12138.oss-cn-shenzhen.aliyuncs.com/img/20210725152001.png)
+
 2. 修改`/etc/redis.conf`文件：将`daemonize no`改为`daemonize yes`
 
    ```
    # vim /etc/redis.conf
    ```
+
+   ![](https://azhu12138.oss-cn-shenzhen.aliyuncs.com/img/20210725152148.png)
 
 修改后之后就在`/usr/local/bin`目录下启动服务端：
 
@@ -187,6 +191,8 @@ Redis（Remote Dictionary Server )，即**远程字典服务**，
 
 然后就启动成功。
 
+![](https://azhu12138.oss-cn-shenzhen.aliyuncs.com/img/20210725152412.png)
+
 ### 客户端启动：
 
 在`/usr/local/bin`目录下，直接运行客户端文件：
@@ -194,6 +200,8 @@ Redis（Remote Dictionary Server )，即**远程字典服务**，
 ```
 # redis-cli
 ```
+
+![](https://azhu12138.oss-cn-shenzhen.aliyuncs.com/img/20210725152527.png)
 
 ### 后台启动的关闭：
 
@@ -203,10 +211,12 @@ Redis（Remote Dictionary Server )，即**远程字典服务**，
 # ps -ef | grep redis
 ```
 
+![](https://azhu12138.oss-cn-shenzhen.aliyuncs.com/img/20210725152617.png)
+
 然后直接通过进程号杀掉：
 
 ```
-# kill -9 进程号
+# kill -9 10226
 ```
 
 或者：
@@ -216,4 +226,10 @@ Redis（Remote Dictionary Server )，即**远程字典服务**，
 ```
 # shutdown
 ```
+
+![](https://azhu12138.oss-cn-shenzhen.aliyuncs.com/img/20210725152759.png)
+
+
+
+
 
