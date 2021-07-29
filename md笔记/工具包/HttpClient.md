@@ -24,6 +24,27 @@ HttpClient 已经应用在很多的项目中，比如 Apache Jakarta 上很著�
 
 （4）支持代理服务器 等
 
+## 说明一下：
+
+**HttpClient 和 HttpComponents 的关系？**
+
+我们先来看看 Apache 官网对两者的描述：
+
+> Commons HttpClient 项目现已结束，不再开发。它已被 HttpClient 和 HttpCore 模块中的 Apache HttpComponents 项目取代，提供更好的性能和更大的灵活性。
+
+> Apache HttpComponents 项目负责创建和维护专注于 HTTP 和相关协议的低级 Java 组件工具集。该项目在 Apache 软件基金会下运作，是更大的开发人员和用户社区的一部分。
+
+**简单来说就是：**
+
+1. 两个都是 Apache 的项目
+2. 一开始是只有 HttpClient ，但是慢慢发展到现在就已经被废弃了，取而代之是 HttpComponents 。
+3. HttpComponents 比 HttpClient 更加强大，
+   - HttpComponents 包含有更好的 HttpClient（`HttpComponents Client`）
+   - 除了 HttpClient，还包含有：`HttpComponents Core` 和 `Commons HttpClient (legacy)`。
+4. 所以我们应该使用 HttpComponents 中的更好的 HttpClient（正如下文所展示的那样）。
+
+
+
 # 如何使用？
 
 首先，导包：
@@ -192,4 +213,8 @@ httpPost.setEntity(urlEncodedFormEntity);
 所以不论是GET还是POST，参照上述方法处理就行了。
 
 
+
+# 最后
+
+如果想了解更加深入的`HttpClient `知识，可以到官网查看详细的教程：http://hc.apache.org/httpcomponents-client-4.5.x/current/tutorial/html/ 
 
