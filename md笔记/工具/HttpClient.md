@@ -6,7 +6,7 @@ HTTP 协议是 Internet 上使用得最多、最重要的协议之一，越来�
 
 HttpClient 是 Apache Jakarta Common 下的子项目，用来提供高效的、最新的、功能丰富的支持 HTTP 协议的客户端编程工具包，并且它支持 HTTP 协议最新的版本和建议。
 
-HttpClient 已经应用在很多的项目中，比如 Apache Jakarta 上很著名的另外两个开源项目 [Cactus](https://baike.baidu.com/item/Cactus) 和 [HTMLUnit](https://baike.baidu.com/item/HTMLUnit) 都使用了 HttpClient。
+HttpClient 已经应用在很多的项目中，比如 Apache Jakarta 上很著名的另外两个开源项目 Cactus 和 HTMLUnit 都使用了 HttpClient。
 
 **简单来说就是：**
 
@@ -159,7 +159,7 @@ public static void doPost() {
 
 
 
-### GET请求的`url`中有中文参数
+### GET请求的url中有中文参数
 
 很简单，在参数拼接到`url`之前，先把参数进行编码。
 
@@ -216,5 +216,7 @@ httpPost.setEntity(urlEncodedFormEntity);
 
 # 最后
 
-如果想了解更加深入的`HttpClient `知识，可以到官网查看详细的教程：http://hc.apache.org/httpcomponents-client-4.5.x/current/tutorial/html/ 
+如果想了解更加深入的`HttpClient `知识，可以到官网查看详细的教程：
+
+http://hc.apache.org/httpcomponents-client-4.5.x/current/tutorial/html/ 
 

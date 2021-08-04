@@ -131,8 +131,6 @@ Redis（Remote Dictionary Server )，即**远程字典服务**，
 
 ![](https://azhu12138.oss-cn-shenzhen.aliyuncs.com/img/20210724222535.png)
 
-
-
 ### 安装目录介绍：
 
 ![](https://azhu12138.oss-cn-shenzhen.aliyuncs.com/img/20210724222751.png)
