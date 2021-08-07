@@ -43,8 +43,6 @@ HttpClient 已经应用在很多的项目中，比如 Apache Jakarta 上很著�
    - 除了 HttpClient，还包含有：`HttpComponents Core` 和 `Commons HttpClient (legacy)`。
 4. 所以我们应该使用 HttpComponents 中的更好的 HttpClient（正如下文所展示的那样）。
 
-
-
 # 如何使用？
 
 首先，导包：
@@ -142,8 +140,6 @@ public static void doPost() {
 }
 ```
 
-
-
 # 有中文参数怎么办？
 
 众所周知：GET请求的参数是显示在`url`中的，而POST请求的参数是在请求体里面的，不会显示在`url`上。
@@ -152,8 +148,6 @@ public static void doPost() {
 
 1. GET请求的`url`中有中文参数
 2. POST请求的请求体里面有中文参数
-
-
 
 ### GET请求的url中有中文参数
 
@@ -182,8 +176,6 @@ String newUrl = oldUrl + "?" + "key1=" + newName1 + "&key2=" + oldName2 ;
 > import java.net.URLEncoder;
 > ```
 
-
-
 ### POST请求的请求体里面有中文参数
 
 这种情况就更加的简单，只需要在设置请求体的参数时，指定编码方式就可以了：
@@ -195,8 +187,6 @@ httpPost.setEntity(urlEncodedFormEntity);
 ```
 
 **注意：**编码方式需要根据服务端来选择，大多数为`UTF-8`，我这里比较特殊是`GBK`。
-
-
 
 # 有xml格式的参数怎么办？
 

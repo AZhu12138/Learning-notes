@@ -5,7 +5,11 @@
 很简单：
 
 1. 打开Typora
+
 2. 点击左上角“主题”
+
+   ![](https://azhu12138.oss-cn-shenzhen.aliyuncs.com/img/20210805111335.png)
+
 3. 就可以选择你想要的主题啦！
 
 ## 主题太少没有喜欢的？
@@ -26,12 +30,18 @@ https://theme.typora.io/
 
 3. 打开Typora，左上角`文件`->`偏好设置`->`外观`->`主题`->`打开主题文件夹`
 
+   ![](https://azhu12138.oss-cn-shenzhen.aliyuncs.com/img/20210805111042.png)
+
+   ![](https://azhu12138.oss-cn-shenzhen.aliyuncs.com/img/20210805111519.png)
+
 4. 然后把：
 
    - 一个名为"abc"的文件夹
    - 一个`abc.css`文件
 
    复制到该文件夹下。
+
+   ![](https://azhu12138.oss-cn-shenzhen.aliyuncs.com/img/20210805111734.png)
 
 5. 关闭Typora，再打开Typora，点击左上角“主题”，
 
@@ -61,5 +71,5 @@ https://theme.typora.io/
 
 接下来的操作请参考：
 
-http://cdjsap.com/djisa/csao
+https://blog.csdn.net/weixin_44911685/article/details/119449641
 
