@@ -70,8 +70,6 @@ HttpClient 已经应用在很多的项目中，比如 Apache Jakarta 上很著�
 
 下面看实际的代码：
 
-
-
 ### GET方法：
 
 ```java
@@ -104,8 +102,6 @@ public static void doGet() {
     }
 }
 ```
-
-
 
 ### POST方法：
 
@@ -211,8 +207,6 @@ httpPost.setEntity(urlEncodedFormEntity);
 所有的非法字符都可以使用上面处理中文参数的方法来解决。
 
 所以不论是GET还是POST，参照上述方法处理就行了。
-
-
 
 # 最后
 
